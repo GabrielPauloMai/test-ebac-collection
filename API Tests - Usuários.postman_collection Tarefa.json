@@ -1,0 +1,404 @@
+{
+	"info": {
+		"_postman_id": "bc680d97-a4fd-425b-ad43-843614583f0b",
+		"name": "API Tests - Usuários",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "37626561"
+	},
+	"item": [
+		{
+			"name": "Cenários Positivos",
+			"item": [
+				{
+					"name": "Listar Usuários",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test('Status code is 200', function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"pm.test('Response time is less than 200ms', function () {",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Serv}}/usuarios",
+							"host": [
+								"{{Serv}}"
+							],
+							"path": [
+								"usuarios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Criar Usuário",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"const firstName = pm.variables.replaceIn('{{$randomFirstName}}');",
+									"const lastName = pm.variables.replaceIn('{{$randomLastName}}');",
+									"const email = pm.variables.replaceIn('{{$randomEmail}}');",
+									"const password = pm.variables.replaceIn('{{$randomWord}}') + Math.floor(Math.random() * 1000);",
+									"pm.environment.set('userName', `${firstName} ${lastName}`);",
+									"pm.environment.set('userEmail', email);",
+									"pm.environment.set('userPassword', password);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test('Usuario cadastrado com sucesso!', function () {",
+									"    pm.expect(pm.response.text()).to.include('Cadastro realizado com sucesso');",
+									"});",
+									"pm.test('Retornar um codigo 201',function(){",
+									"    pm.response.to.have.status(201);",
+									"});",
+									"",
+									"",
+									"const responseJson = pm.response.json();",
+									"pm.environment.set('userId', responseJson._id);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"nome\": \"{{userName}}\",\n  \"email\": \"{{userEmail}}\",\n  \"password\": \"{{userPassword}}\",\n  \"administrador\": \"false\"\n}"
+						},
+						"url": {
+							"raw": "{{Serv}}/usuarios",
+							"host": [
+								"{{Serv}}"
+							],
+							"path": [
+								"usuarios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar Usuário por ID",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test('Usuário encontrado', function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"pm.test('Validação do Usuário', function(){",
+									"    const responseJson = pm.response.json();",
+									"    pm.expect(responseJson._id).to.eql(pm.environment.get('userId'));",
+									"    pm.expect(responseJson.nome).to.eql(pm.environment.get('userName'));",
+									"    pm.expect(responseJson.email).to.eql(pm.environment.get('userEmail'));",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Serv}}/usuarios/{{userId}}",
+							"host": [
+								"{{Serv}}"
+							],
+							"path": [
+								"usuarios",
+								"{{userId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizar Usuário",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test('Retornar um código de sucesso', function(){",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test('Registro alterado com sucesso', function () {",
+									"    pm.expect(pm.response.text()).to.include('Registro alterado com sucesso');",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"nome\": \"{{userName}}\",\n  \"email\": \"{{userEmail}}\",\n  \"password\": \"{{userPassword}}\",\n  \"administrador\": \"true\"\n}"
+						},
+						"url": {
+							"raw": "{{Serv}}/usuarios/{{userId}}",
+							"host": [
+								"{{Serv}}"
+							],
+							"path": [
+								"usuarios",
+								"{{userId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Tentar Atualizar Usuário Inexistente",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test('Retornar um código de sucesso de criação', function(){",
+									"    pm.response.to.have.status(201);",
+									"})",
+									"",
+									"pm.test('Usuário não encontrado para atualização', function () {",
+									"    pm.expect(pm.response.text()).to.include('Cadastro realizado com sucesso');",
+									"});",
+									"",
+									"",
+									"const responseJson = pm.response.json();",
+									"pm.environment.set('userId', responseJson._id);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"nome\": \"Usuário Inexistente\",\n  \"email\": \"inexistente123@teste.com\",\n  \"password\": \"inexistente123\",\n  \"administrador\": \"false\"\n}"
+						},
+						"url": {
+							"raw": "{{Serv}}/usuarios/inexistenteId",
+							"host": [
+								"{{Serv}}"
+							],
+							"path": [
+								"usuarios",
+								"inexistenteId"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Excluir Usuário",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test('Retornar um código de sucesso', function(){",
+									"    pm.response.to.have.status(200);",
+									"})",
+									"",
+									"pm.test('Usuário excluído com sucesso', function () {",
+									"    pm.expect(pm.response.text()).to.include('Registro excluído com sucesso');",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{Serv}}/usuarios/{{userId}}",
+							"host": [
+								"{{Serv}}"
+							],
+							"path": [
+								"usuarios",
+								"{{userId}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Cenários Negativos",
+			"item": [
+				{
+					"name": "Tentar Criar Usuário com Email Existente",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test('Retornar um código de erro', function(){",
+									"    pm.response.to.have.status(400);",
+									"})",
+									"",
+									"pm.test('Email já utilizado', function () {",
+									"    pm.expect(pm.response.text()).to.include('Este email já está sendo usado');",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"nome\": \"{{userName}}\",\n  \"email\": \"{{userEmail}}\",\n  \"password\": \"{{userPassword}}\",\n  \"administrador\": \"false\"\n}"
+						},
+						"url": {
+							"raw": "{{Serv}}/usuarios",
+							"host": [
+								"{{Serv}}"
+							],
+							"path": [
+								"usuarios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar Usuário Inexistente por ID",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test('Retornar um código de erro', function(){",
+									"    pm.response.to.have.status(400);",
+									"});",
+									"",
+									"pm.test('Usuário não encontrado', function () {",
+									"    pm.expect(pm.response.text()).to.include('Usuário não encontrado');",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Serv}}/usuarios/inexistenteId",
+							"host": [
+								"{{Serv}}"
+							],
+							"path": [
+								"usuarios",
+								"inexistenteId"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Tentar Excluir Usuário Inexistente",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test('Retornar um código de sucesso', function(){",
+									"    pm.response.to.have.status(200);",
+									"})",
+									"",
+									"pm.test('Usuário não encontrado para exclusão', function () {",
+									"    pm.expect(pm.response.text()).to.include('Nenhum registro excluído');",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{Serv}}/usuarios/inexistenteId",
+							"host": [
+								"{{Serv}}"
+							],
+							"path": [
+								"usuarios",
+								"inexistenteId"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,745 @@
+{
+	"id": "3ae63918-1ded-4564-ab68-4f85fb4c685b",
+	"name": "API Tests - Usuários",
+	"timestamp": "2024-08-14T12:00:14.824Z",
+	"collection_id": "37626561-bc680d97-a4fd-425b-ad43-843614583f0b",
+	"folder_id": 0,
+	"environment_id": "37626561-9d69426a-3b8e-4052-90b3-8afb201864ca",
+	"totalPass": 170,
+	"delay": 0,
+	"persist": true,
+	"status": "finished",
+	"startedAt": "2024-08-14T12:00:06.890Z",
+	"totalFail": 0,
+	"results": [
+		{
+			"id": "db090b97-32ab-4025-9809-0eca8ddc0828",
+			"name": "Listar Usuários",
+			"url": "http://localhost:3000/usuarios",
+			"time": 3,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Response time is less than 200ms": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 10,
+					"fail": 0
+				},
+				"Response time is less than 200ms": {
+					"pass": 10,
+					"fail": 0
+				}
+			},
+			"times": [
+				8,
+				4,
+				3,
+				3,
+				4,
+				4,
+				87,
+				3,
+				3,
+				3
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Response time is less than 200ms": true
+				},
+				{
+					"Status code is 200": true,
+					"Response time is less than 200ms": true
+				},
+				{
+					"Status code is 200": true,
+					"Response time is less than 200ms": true
+				},
+				{
+					"Status code is 200": true,
+					"Response time is less than 200ms": true
+				},
+				{
+					"Status code is 200": true,
+					"Response time is less than 200ms": true
+				},
+				{
+					"Status code is 200": true,
+					"Response time is less than 200ms": true
+				},
+				{
+					"Status code is 200": true,
+					"Response time is less than 200ms": true
+				},
+				{
+					"Status code is 200": true,
+					"Response time is less than 200ms": true
+				},
+				{
+					"Status code is 200": true,
+					"Response time is less than 200ms": true
+				},
+				{
+					"Status code is 200": true,
+					"Response time is less than 200ms": true
+				}
+			]
+		},
+		{
+			"id": "ac52dfbf-cc39-4d78-9aae-0b48c3b8fb3a",
+			"name": "Criar Usuário",
+			"url": "http://localhost:3000/usuarios",
+			"time": 7,
+			"responseCode": {
+				"code": 201,
+				"name": "Created"
+			},
+			"tests": {
+				"Usuario cadastrado com sucesso!": true,
+				"Retornar um codigo 201": true
+			},
+			"testPassFailCounts": {
+				"Usuario cadastrado com sucesso!": {
+					"pass": 10,
+					"fail": 0
+				},
+				"Retornar um codigo 201": {
+					"pass": 10,
+					"fail": 0
+				}
+			},
+			"times": [
+				166,
+				8,
+				9,
+				9,
+				6,
+				7,
+				10,
+				7,
+				8,
+				7
+			],
+			"allTests": [
+				{
+					"Usuario cadastrado com sucesso!": true,
+					"Retornar um codigo 201": true
+				},
+				{
+					"Usuario cadastrado com sucesso!": true,
+					"Retornar um codigo 201": true
+				},
+				{
+					"Usuario cadastrado com sucesso!": true,
+					"Retornar um codigo 201": true
+				},
+				{
+					"Usuario cadastrado com sucesso!": true,
+					"Retornar um codigo 201": true
+				},
+				{
+					"Usuario cadastrado com sucesso!": true,
+					"Retornar um codigo 201": true
+				},
+				{
+					"Usuario cadastrado com sucesso!": true,
+					"Retornar um codigo 201": true
+				},
+				{
+					"Usuario cadastrado com sucesso!": true,
+					"Retornar um codigo 201": true
+				},
+				{
+					"Usuario cadastrado com sucesso!": true,
+					"Retornar um codigo 201": true
+				},
+				{
+					"Usuario cadastrado com sucesso!": true,
+					"Retornar um codigo 201": true
+				},
+				{
+					"Usuario cadastrado com sucesso!": true,
+					"Retornar um codigo 201": true
+				}
+			]
+		},
+		{
+			"id": "26cd432b-5f6e-4df1-aea3-6d4d97431c54",
+			"name": "Buscar Usuário por ID",
+			"url": "http://localhost:3000/usuarios/8He5UijDEcxKZqY5",
+			"time": 4,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Usuário encontrado": true,
+				"Validação do Usuário": true
+			},
+			"testPassFailCounts": {
+				"Usuário encontrado": {
+					"pass": 10,
+					"fail": 0
+				},
+				"Validação do Usuário": {
+					"pass": 10,
+					"fail": 0
+				}
+			},
+			"times": [
+				3,
+				4,
+				5,
+				3,
+				4,
+				3,
+				6,
+				3,
+				3,
+				4
+			],
+			"allTests": [
+				{
+					"Usuário encontrado": true,
+					"Validação do Usuário": true
+				},
+				{
+					"Usuário encontrado": true,
+					"Validação do Usuário": true
+				},
+				{
+					"Usuário encontrado": true,
+					"Validação do Usuário": true
+				},
+				{
+					"Usuário encontrado": true,
+					"Validação do Usuário": true
+				},
+				{
+					"Usuário encontrado": true,
+					"Validação do Usuário": true
+				},
+				{
+					"Usuário encontrado": true,
+					"Validação do Usuário": true
+				},
+				{
+					"Usuário encontrado": true,
+					"Validação do Usuário": true
+				},
+				{
+					"Usuário encontrado": true,
+					"Validação do Usuário": true
+				},
+				{
+					"Usuário encontrado": true,
+					"Validação do Usuário": true
+				},
+				{
+					"Usuário encontrado": true,
+					"Validação do Usuário": true
+				}
+			]
+		},
+		{
+			"id": "b0830ad3-9102-4c7a-9005-d3568b587ce4",
+			"name": "Atualizar Usuário",
+			"url": "http://localhost:3000/usuarios/8He5UijDEcxKZqY5",
+			"time": 8,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Retornar um código de sucesso": true,
+				"Registro alterado com sucesso": true
+			},
+			"testPassFailCounts": {
+				"Retornar um código de sucesso": {
+					"pass": 10,
+					"fail": 0
+				},
+				"Registro alterado com sucesso": {
+					"pass": 10,
+					"fail": 0
+				}
+			},
+			"times": [
+				8,
+				8,
+				7,
+				8,
+				7,
+				8,
+				11,
+				24,
+				8,
+				8
+			],
+			"allTests": [
+				{
+					"Retornar um código de sucesso": true,
+					"Registro alterado com sucesso": true
+				},
+				{
+					"Retornar um código de sucesso": true,
+					"Registro alterado com sucesso": true
+				},
+				{
+					"Retornar um código de sucesso": true,
+					"Registro alterado com sucesso": true
+				},
+				{
+					"Retornar um código de sucesso": true,
+					"Registro alterado com sucesso": true
+				},
+				{
+					"Retornar um código de sucesso": true,
+					"Registro alterado com sucesso": true
+				},
+				{
+					"Retornar um código de sucesso": true,
+					"Registro alterado com sucesso": true
+				},
+				{
+					"Retornar um código de sucesso": true,
+					"Registro alterado com sucesso": true
+				},
+				{
+					"Retornar um código de sucesso": true,
+					"Registro alterado com sucesso": true
+				},
+				{
+					"Retornar um código de sucesso": true,
+					"Registro alterado com sucesso": true
+				},
+				{
+					"Retornar um código de sucesso": true,
+					"Registro alterado com sucesso": true
+				}
+			]
+		},
+		{
+			"id": "f12a7dc9-9bfd-4497-bc13-5348b2a7c0a4",
+			"name": "Tentar Atualizar Usuário Inexistente",
+			"url": "http://localhost:3000/usuarios/inexistenteId",
+			"time": 9,
+			"responseCode": {
+				"code": 201,
+				"name": "Created"
+			},
+			"tests": {
+				"Usuário não encontrado para atualização": true
+			},
+			"testPassFailCounts": {
+				"Usuário não encontrado para atualização": {
+					"pass": 10,
+					"fail": 0
+				}
+			},
+			"times": [
+				7,
+				9,
+				7,
+				7,
+				8,
+				10,
+				7,
+				9,
+				8,
+				9
+			],
+			"allTests": [
+				{
+					"Usuário não encontrado para atualização": true
+				},
+				{
+					"Usuário não encontrado para atualização": true
+				},
+				{
+					"Usuário não encontrado para atualização": true
+				},
+				{
+					"Usuário não encontrado para atualização": true
+				},
+				{
+					"Usuário não encontrado para atualização": true
+				},
+				{
+					"Usuário não encontrado para atualização": true
+				},
+				{
+					"Usuário não encontrado para atualização": true
+				},
+				{
+					"Usuário não encontrado para atualização": true
+				},
+				{
+					"Usuário não encontrado para atualização": true
+				},
+				{
+					"Usuário não encontrado para atualização": true
+				}
+			]
+		},
+		{
+			"id": "61a10e30-b178-44b7-a511-a669f01ae97f",
+			"name": "Excluir Usuário",
+			"url": "http://localhost:3000/usuarios/wp8scvX7GEgEVrVa",
+			"time": 8,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Retornar um código de sucesso": true,
+				"Usuário excluído com sucesso": true
+			},
+			"testPassFailCounts": {
+				"Retornar um código de sucesso": {
+					"pass": 10,
+					"fail": 0
+				},
+				"Usuário excluído com sucesso": {
+					"pass": 10,
+					"fail": 0
+				}
+			},
+			"times": [
+				94,
+				8,
+				9,
+				7,
+				58,
+				7,
+				7,
+				9,
+				9,
+				8
+			],
+			"allTests": [
+				{
+					"Retornar um código de sucesso": true,
+					"Usuário excluído com sucesso": true
+				},
+				{
+					"Retornar um código de sucesso": true,
+					"Usuário excluído com sucesso": true
+				},
+				{
+					"Retornar um código de sucesso": true,
+					"Usuário excluído com sucesso": true
+				},
+				{
+					"Retornar um código de sucesso": true,
+					"Usuário excluído com sucesso": true
+				},
+				{
+					"Retornar um código de sucesso": true,
+					"Usuário excluído com sucesso": true
+				},
+				{
+					"Retornar um código de sucesso": true,
+					"Usuário excluído com sucesso": true
+				},
+				{
+					"Retornar um código de sucesso": true,
+					"Usuário excluído com sucesso": true
+				},
+				{
+					"Retornar um código de sucesso": true,
+					"Usuário excluído com sucesso": true
+				},
+				{
+					"Retornar um código de sucesso": true,
+					"Usuário excluído com sucesso": true
+				},
+				{
+					"Retornar um código de sucesso": true,
+					"Usuário excluído com sucesso": true
+				}
+			]
+		},
+		{
+			"id": "afd3d695-37d8-4b0a-8b0b-b297fad9df71",
+			"name": "Tentar Criar Usuário com Email Existente",
+			"url": "http://localhost:3000/usuarios",
+			"time": 3,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Retornar um código de erro": true,
+				"Email já utilizado": true
+			},
+			"testPassFailCounts": {
+				"Retornar um código de erro": {
+					"pass": 10,
+					"fail": 0
+				},
+				"Email já utilizado": {
+					"pass": 10,
+					"fail": 0
+				}
+			},
+			"times": [
+				4,
+				4,
+				3,
+				3,
+				3,
+				3,
+				4,
+				4,
+				3,
+				3
+			],
+			"allTests": [
+				{
+					"Retornar um código de erro": true,
+					"Email já utilizado": true
+				},
+				{
+					"Retornar um código de erro": true,
+					"Email já utilizado": true
+				},
+				{
+					"Retornar um código de erro": true,
+					"Email já utilizado": true
+				},
+				{
+					"Retornar um código de erro": true,
+					"Email já utilizado": true
+				},
+				{
+					"Retornar um código de erro": true,
+					"Email já utilizado": true
+				},
+				{
+					"Retornar um código de erro": true,
+					"Email já utilizado": true
+				},
+				{
+					"Retornar um código de erro": true,
+					"Email já utilizado": true
+				},
+				{
+					"Retornar um código de erro": true,
+					"Email já utilizado": true
+				},
+				{
+					"Retornar um código de erro": true,
+					"Email já utilizado": true
+				},
+				{
+					"Retornar um código de erro": true,
+					"Email já utilizado": true
+				}
+			]
+		},
+		{
+			"id": "688879fb-8294-453d-a980-d3aa13d11d8f",
+			"name": "Buscar Usuário Inexistente por ID",
+			"url": "http://localhost:3000/usuarios/inexistenteId",
+			"time": 3,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Retornar um código de erro": true,
+				"Usuário não encontrado": true
+			},
+			"testPassFailCounts": {
+				"Retornar um código de erro": {
+					"pass": 10,
+					"fail": 0
+				},
+				"Usuário não encontrado": {
+					"pass": 10,
+					"fail": 0
+				}
+			},
+			"times": [
+				4,
+				4,
+				4,
+				4,
+				3,
+				5,
+				3,
+				3,
+				18,
+				3
+			],
+			"allTests": [
+				{
+					"Retornar um código de erro": true,
+					"Usuário não encontrado": true
+				},
+				{
+					"Retornar um código de erro": true,
+					"Usuário não encontrado": true
+				},
+				{
+					"Retornar um código de erro": true,
+					"Usuário não encontrado": true
+				},
+				{
+					"Retornar um código de erro": true,
+					"Usuário não encontrado": true
+				},
+				{
+					"Retornar um código de erro": true,
+					"Usuário não encontrado": true
+				},
+				{
+					"Retornar um código de erro": true,
+					"Usuário não encontrado": true
+				},
+				{
+					"Retornar um código de erro": true,
+					"Usuário não encontrado": true
+				},
+				{
+					"Retornar um código de erro": true,
+					"Usuário não encontrado": true
+				},
+				{
+					"Retornar um código de erro": true,
+					"Usuário não encontrado": true
+				},
+				{
+					"Retornar um código de erro": true,
+					"Usuário não encontrado": true
+				}
+			]
+		},
+		{
+			"id": "9df2ac90-f384-4db0-92db-875ce6c21a11",
+			"name": "Tentar Excluir Usuário Inexistente",
+			"url": "http://localhost:3000/usuarios/inexistenteId",
+			"time": 3,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Retornar um código de sucesso": true,
+				"Usuário não encontrado para exclusão": true
+			},
+			"testPassFailCounts": {
+				"Retornar um código de sucesso": {
+					"pass": 10,
+					"fail": 0
+				},
+				"Usuário não encontrado para exclusão": {
+					"pass": 10,
+					"fail": 0
+				}
+			},
+			"times": [
+				5,
+				37,
+				2,
+				3,
+				4,
+				3,
+				4,
+				3,
+				4,
+				3
+			],
+			"allTests": [
+				{
+					"Retornar um código de sucesso": true,
+					"Usuário não encontrado para exclusão": true
+				},
+				{
+					"Retornar um código de sucesso": true,
+					"Usuário não encontrado para exclusão": true
+				},
+				{
+					"Retornar um código de sucesso": true,
+					"Usuário não encontrado para exclusão": true
+				},
+				{
+					"Retornar um código de sucesso": true,
+					"Usuário não encontrado para exclusão": true
+				},
+				{
+					"Retornar um código de sucesso": true,
+					"Usuário não encontrado para exclusão": true
+				},
+				{
+					"Retornar um código de sucesso": true,
+					"Usuário não encontrado para exclusão": true
+				},
+				{
+					"Retornar um código de sucesso": true,
+					"Usuário não encontrado para exclusão": true
+				},
+				{
+					"Retornar um código de sucesso": true,
+					"Usuário não encontrado para exclusão": true
+				},
+				{
+					"Retornar um código de sucesso": true,
+					"Usuário não encontrado para exclusão": true
+				},
+				{
+					"Retornar um código de sucesso": true,
+					"Usuário não encontrado para exclusão": true
+				}
+			]
+		}
+	],
+	"count": 10,
+	"totalTime": 944,
+	"collection": {
+		"requests": [
+			{
+				"id": "db090b97-32ab-4025-9809-0eca8ddc0828",
+				"method": "GET"
+			},
+			{
+				"id": "ac52dfbf-cc39-4d78-9aae-0b48c3b8fb3a",
+				"method": "POST"
+			},
+			{
+				"id": "26cd432b-5f6e-4df1-aea3-6d4d97431c54",
+				"method": "GET"
+			},
+			{
+				"id": "b0830ad3-9102-4c7a-9005-d3568b587ce4",
+				"method": "PUT"
+			},
+			{
+				"id": "f12a7dc9-9bfd-4497-bc13-5348b2a7c0a4",
+				"method": "PUT"
+			},
+			{
+				"id": "61a10e30-b178-44b7-a511-a669f01ae97f",
+				"method": "DELETE"
+			},
+			{
+				"id": "afd3d695-37d8-4b0a-8b0b-b297fad9df71",
+				"method": "POST"
+			},
+			{
+				"id": "688879fb-8294-453d-a980-d3aa13d11d8f",
+				"method": "GET"
+			},
+			{
+				"id": "9df2ac90-f384-4db0-92db-875ce6c21a11",
+				"method": "DELETE"
+			}
+		]
+	}
+}
